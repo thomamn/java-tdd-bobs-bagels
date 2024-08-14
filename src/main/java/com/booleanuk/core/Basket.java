@@ -32,6 +32,11 @@ public class Basket {
 
     public boolean remove(String bagel, int num){
         if (bagels.containsKey(bagel)){
+            if (bagels.get(bagel)==0){
+                System.out.println("The basket does not contain this bagle type");
+                return false;
+            }
+
             bagels.replace(bagel, bagels.get(bagel)-num);
             return true;
         }
