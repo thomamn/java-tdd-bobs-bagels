@@ -48,6 +48,13 @@ class BasketTest {
     }
 
     @Test
+    public void testAddingtoFull(){
+        Basket basket= new Basket(10);
+        basket.add("Nice bagel", 9);
+        Assertions.assertFalse(basket.add("Nice bagel", 2));
+    }
+
+    @Test
     public void testCheckCapacity(){
         Basket basket= new Basket(10);
         basket.add("Nice bagel", 5);
@@ -61,12 +68,7 @@ class BasketTest {
         Assertions.assertTrue(basket.incCapacity(5));
     }
 
-    @Test
-    public void testAddingtoFull(){
-        Basket basket= new Basket(10);
-        basket.add("Nice bagel", 9);
-        Assertions.assertFalse(basket.add("Nice bagel", 2));
-    }
+
 
 
 
